@@ -26,9 +26,29 @@
 >`python manage.py runserver`
 
 ## Примеры запросов
-Создание
+- Получение публикаций
+<pre> GET /api/v1/posts/ 
+  { 
+    "limit": "5",
+    "offset": "1"
+  }  </pre>
+
+- Создание публикации
 <pre> POST /api/v1/posts/ 
   { 
-    "text":
-    "group": 
+    "text": "Моя публикация" 
   }  </pre>
+
+- Получение публикации
+<pre> GET /api/v1/posts/1/
+</pre>
+
+- Добавление комментария
+<pre> POST /api/v1/posts/1/comments/
+{
+  "text": "string"
+}</pre>
+
+- Список сообществ
+<pre> GET /api/v1/groups/
+</pre>
