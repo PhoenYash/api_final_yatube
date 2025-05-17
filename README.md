@@ -5,25 +5,25 @@
 
 ## Сборка и установка проекта
 Клонирование репозитория
-<pre>`git clone https://github.com/PhoenYash/api_final_yatube.git`<\pre>
+>`git clone https://github.com/PhoenYash/api_final_yatube.git`
 
 Создание виртуального окружения
-<pre>`python -m venv venv`<\pre>
+>`python -m venv venv`
 
 Активация виртуального окружения
-<pre>`source venv\Scripts\activate`<\pre>
+>`source venv\Scripts\activate`
 
 Установка зависимостей
-<pre>`pip install -r requirements.txt`<\pre>
+>`pip install -r requirements.txt`
 
 Обновление версии pip
-<pre>`python -m pip install --upgrade pip`<\pre>
+>`python -m pip install --upgrade pip`
 
 Применение миграций
-<pre>`python manage.py migrate`<\pre>
+>`python manage.py migrate`
 
 Запуск сервера
-<pre>`python manage.py runserver`<\pre>
+>`python manage.py runserver`
 
 ## Примеры запросов
 Создание
