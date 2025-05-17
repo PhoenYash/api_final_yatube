@@ -1,30 +1,18 @@
-
 from django.contrib.auth import get_user_model
-
 from django.db import models
-# from djoser import serializers
 
 
 User = get_user_model()
 
 
-
-
-
-# class CustomUserSerializer(UserSerializer):
-#     class Meta:
-#         model = User
-#         fields = ('email', 'id', 'username', 'first_name', 'last_name')
-
-
-#добавлен класс
 class Group(models.Model):
     title = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, max_length=50)
     description = models.TextField()
 
     def __str__(self):
         return self.title
+
 
 class Post(models.Model):
     text = models.TextField()
@@ -46,20 +34,28 @@ class Post(models.Model):
 class Comment(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='comments')
-    post = models.ForeignKey(
-        Post, on_delete=models.CASCADE, related_name='comments')
     text = models.TextField()
     created = models.DateTimeField(
         'Дата добавления', auto_now_add=True, db_index=True)
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name='comments')
 
 
-#добавлен класс
 class Follow(models.Model):
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='follower'
+        User, on_delete=models.CASCADE, related_name='user'
     )
     following = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='following'
     )
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=('user', 'following'),
+                name='unique_userfollow'
+            )
+        ]
 
+    def __str__(self):
+        return f'{self.user} имеет подписку на {self.following}'
