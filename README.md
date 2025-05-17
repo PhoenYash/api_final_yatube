@@ -1,29 +1,29 @@
 # api_final_yatube
 
 ## Описание проекта
-
+Представляет из себя соцсеть, в которой пользователи способны регестрироваться, делать/удалять/редактировать публикации, оставлять/удалять/редактировать комментарии и подписываться друг на друга.
 
 ## Сборка и установка проекта
 Клонирование репозитория
-`git clone https://github.com/PhoenYash/api_final_yatube.git`
+<pre>`git clone https://github.com/PhoenYash/api_final_yatube.git`<\pre>
 
 Создание виртуального окружения
-`python -m venv venv`
+<pre>`python -m venv venv`<\pre>
 
 Активация виртуального окружения
-`source venv\Scripts\activate`
+<pre>`source venv\Scripts\activate`<\pre>
 
 Установка зависимостей
-`pip install -r requirements.txt`
+<pre>`pip install -r requirements.txt`<\pre>
 
 Обновление версии pip
-`python -m pip install --upgrade pip`
+<pre>`python -m pip install --upgrade pip`<\pre>
 
 Применение миграций
-`python manage.py migrate`
+<pre>`python manage.py migrate`<\pre>
 
 Запуск сервера
-`python manage.py runserver`
+<pre>`python manage.py runserver`<\pre>
 
 ## Примеры запросов
 Создание
